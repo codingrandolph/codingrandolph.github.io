@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["DM5AT74F4W.codingrandolph.Adventskalender"],
+        "components": [
+          { "/": "/gift/*", "comment": "Geschenk-Links: Kalender in der App öffnen" }
+        ]
+      }
+    ]
+  }
+}

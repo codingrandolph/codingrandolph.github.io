@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein Adventskalender für dich</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+<div class="door" aria-hidden="true"></div>
+<h1>Ein Adventskalender für dich!</h1>
+<p>Jemand hat für dich einen Adventskalender gestaltet – mit 24 Türchen voller Erinnerungen.</p>
+<div class="card">
+  <p><strong>So öffnest du ihn:</strong></p>
+  <ol>
+    <li>Lade die App aus dem App Store.</li>
+    <li>Tippe danach noch einmal auf deinen Geschenk-Link – oder auf „In der App öffnen“.</li>
+  </ol>
+  <p>
+    <a class="button" id="store" href="APP_STORE_URL">App laden</a>
+    <a class="button secondary" id="open" href="#">In der App öffnen</a>
+  </p>
+</div>
+<p class="muted" id="hint">Ab dem 1. Dezember öffnet sich jeden Tag ein Türchen.</p>
+<script>
+  // Schlüssel aus ?t=… an das App-Schema weiterreichen (Fallback, falls der
+  // Universal Link nicht direkt in der App gelandet ist).
+  // Bis die App im Store ist, gibt es noch keinen Link – Knopf dann ausblenden.
+  const store = document.getElementById("store");
+  if (store.getAttribute("href") === "APP_STORE_URL") store.style.display = "none";
+
+  const token = new URLSearchParams(location.search).get("t");
+  const open = document.getElementById("open");
+  if (token && /^[A-Za-z0-9_-]{16,64}$/.test(token)) {
+    open.href = "adventskalender://gift?t=" + encodeURIComponent(token);
+  } else {
+    open.style.display = "none";
+    document.getElementById("hint").textContent =
+      "Dieser Link ist unvollständig. Bitte frag nach dem vollständigen Geschenk-Link.";
+  }
+</script>
+<footer><a href="/">Start</a><a href="/support/">Support</a><a href="/datenschutz/">Datenschutz</a></footer>
+</main></body></html>

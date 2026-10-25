@@ -1,0 +1,41 @@
+:root {
+  --green-top: #0F3324;
+  --green-bottom: #1C593D;
+  --berry: #991C2E;
+  --gold: #D9AD5C;
+  --cream: #F7F0E0;
+}
+* { box-sizing: border-box; }
+html { background: var(--green-top); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(var(--green-top), var(--green-bottom));
+  color: var(--cream);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+main { max-width: 680px; margin: 0 auto; padding: 48px 16px 64px; }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: bold; line-height: 1.2; }
+h1 { font-size: 2.1rem; margin: 0 0 0.6em; }
+h2 { font-size: 1.35rem; margin: 1.8em 0 0.5em; }
+a { color: var(--gold); }
+.door {
+  width: 96px; height: 96px; margin: 0 0 28px;
+  background: var(--berry); border: 3px solid var(--gold); border-radius: 20px;
+  position: relative;
+}
+.door::after {
+  content: ""; position: absolute; right: 11px; top: 50%;
+  width: 9px; height: 9px; margin-top: -4.5px; border-radius: 50%; background: var(--gold);
+}
+.card {
+  background: rgba(247, 240, 224, 0.1); border-radius: 16px; padding: 18px 20px; margin: 20px 0;
+}
+.button {
+  display: inline-block; padding: 14px 22px; border-radius: 14px; margin: 6px 8px 6px 0;
+  background: var(--gold); color: var(--green-top); font-weight: 600; text-decoration: none;
+}
+.button.secondary { background: transparent; color: var(--cream); border: 2px solid var(--gold); }
+.muted { opacity: 0.8; font-size: 0.92rem; }
+footer { margin-top: 48px; font-size: 0.9rem; opacity: 0.8; }
+footer a { margin-right: 16px; }

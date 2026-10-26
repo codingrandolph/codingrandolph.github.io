@@ -1,6 +1,6 @@
 # codingrandolph.github.io
 
-Öffentliche Webseite zur App **Adventskalender** (GitHub Pages). Der Quellcode der App
+Öffentliche Webseite zur App **Adventskalender for you** (GitHub Pages). Der Quellcode der App
 liegt nicht hier; dieses Repo enthält nur, was öffentlich sein muss:
 
 | Pfad | Zweck |

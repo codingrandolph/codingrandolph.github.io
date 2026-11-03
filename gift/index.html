@@ -18,7 +18,7 @@
     <li>Tippe danach noch einmal auf deinen Geschenk-Link – oder auf „In der App öffnen“.</li>
   </ol>
   <p>
-    <a class="button" id="store" href="APP_STORE_URL">App laden</a>
+    <a class="button" id="store" href="https://apps.apple.com/de/app/id6823913650">App laden</a>
     <a class="button secondary" id="open" href="#">In der App öffnen</a>
   </p>
 </div>
@@ -26,10 +26,6 @@
 <script>
   // Schlüssel aus ?t=… an das App-Schema weiterreichen (Fallback, falls der
   // Universal Link nicht direkt in der App gelandet ist).
-  // Bis die App im Store ist, gibt es noch keinen Link – Knopf dann ausblenden.
-  const store = document.getElementById("store");
-  if (store.getAttribute("href") === "APP_STORE_URL") store.style.display = "none";
-
   const token = new URLSearchParams(location.search).get("t");
   const open = document.getElementById("open");
   if (token && /^[A-Za-z0-9_-]{16,64}$/.test(token)) {
